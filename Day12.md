@@ -19,4 +19,5 @@ Every operator is useful
 ## Difference Between -f and -d
 
 -f: Checks if the file exists and is a regular file.
+
 -d: Checks if the directory exists and is a folder.
