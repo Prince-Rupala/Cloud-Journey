@@ -29,9 +29,9 @@ Requirements:
 1. Ask for user's name.
 2. Ask for favorite technology.
 3. Print:
+
          Hello <name>
+         Your favorite technology is <technology>
 
-         Your favorite technology is <technology
 
-
-I completed the challenge.>
+I completed the challenge.
