@@ -23,8 +23,11 @@ It happens when two different branches modify the exact same line of the exact s
 ## How do you resolve a conflict?
 
 Step 1: Open the conflicted file.
+
 Step 2: Delete the conflict markers.
+
 Step 3: Edit the text so only correct,final code remians.
+
 Step 4: Save the file, stage it (git add), and run git commit to finalize the merge.
 
 
