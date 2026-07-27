@@ -13,7 +13,7 @@ A service is the definition of how Docker should create and run a container. It 
 
 ## What does docker compose up -d do?
 
-It runs the docker-compose.yml file, executing all the containers in the file.
+It reads your docker-compose.yml file, builds and downloads the required images, creates the defined networks and volumes, and starts all containers in the background in the correct order.
 
 
 ## What does docker compose down do?
