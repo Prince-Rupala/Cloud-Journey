@@ -14,10 +14,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Say hello
-        run: echo "CI pipeline is working!"
+        run: echo "Starting CI"
+
+      - name: Enter the name
+        run: whoami
 
       - name: Show current directory
         run: pwd
 
       - name: List files
         run: ls -la
+
+      - name: The End
+        run: echo "CI finished"
