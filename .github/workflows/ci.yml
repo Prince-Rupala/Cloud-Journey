@@ -17,4 +17,13 @@ jobs:
         run: docker build -t day43-app ./docker-practice/day43
 
       - name: Run Docker container
-        run: docker run --rm day43-app
+        run: |
+          output=$(docker run --rm day43-app)
+          echo "$ouput"
+
+          if [[ "$output" == *"Docker CI is working!"* ]]; then
+            echo "Application test passed!"
+          else
+            echo "Application test failed!"
+            exit 1
+          fi 
