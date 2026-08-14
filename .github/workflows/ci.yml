@@ -1,4 +1,4 @@
-name: My First CI
+name: Docker CI
 
 on:
   push:
@@ -6,24 +6,15 @@ on:
       - main
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Say hello
-        run: echo "Starting CI"
+      - name: Build Docker image
+        run: docker build -t day43-app ./docker-practice/day43
 
-      - name: Enter the name
-        run: whoami
-
-      - name: Show current directory
-        run: pwd
-
-      - name: List files
-        run: ls -la
-
-      - name: The End
-        run: echo "CI finished"
+      - name: Run Docker container
+        run: docker run --rm day43-app
