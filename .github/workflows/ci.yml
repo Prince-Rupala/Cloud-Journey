@@ -1,6 +1,6 @@
 name: Python CI
 
-om:
+on:
   push:
     branches:
       - main:
