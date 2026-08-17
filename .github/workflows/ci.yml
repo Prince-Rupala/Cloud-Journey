@@ -1,29 +1,32 @@
-name: Docker CI
+name: Python CI
 
-on:
+om:
   push:
     branches:
-      - main
+      - main:
 
 jobs:
-  build-and-test:
+  test-and-build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run tests
+        working-directory: docker-practice/day44
+        run: pytest
+
       - name: Build Docker image
-        run: docker build -t day43-app ./docker-practice/day43
+        run: docker build -t day44-app ./docker-practice/day44
 
       - name: Run Docker container
-        run: |
-          output=$(docker run --rm day43-app)
-          echo "$ouput"
-
-          if [[ "$output" == *"Docker CI is working!"* ]]; then
-            echo "Application test passed!"
-          else
-            echo "Application test failed!"
-            exit 1
-          fi 
+        run: docker run --rm day44-app
